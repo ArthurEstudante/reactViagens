@@ -1,13 +1,15 @@
+// Destinos.jsx
 import React from 'react';
-import './App.css';
+import Paises from "./components/paises"
 
-const Destino = ({ nome, descricao }) => {
-  return (
-    <div className="destino">
-      <h2>{nome}</h2>
-      <p>{descricao}</p>
-    </div>
-  );
+const Destinos = () => {
+    return (
+        <>
+            <div>
+                <h2>Destinos</h2><p>Veja nossos destinos incríveis.</p>
+            </div>
+            <Paises />
+        </>)
 };
 
-export default Destino;
+export default Destinos;

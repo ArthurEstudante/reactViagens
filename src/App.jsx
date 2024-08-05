@@ -1,27 +1,37 @@
+// App.jsx
 import React, { useState } from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
-import Destino from './destino';
-import FormDestino from './formDestino';
+import Home from './pages/home';
+import Destinos from './destino';
+import Contato from './pages/contato';
+import './App.css';
 
 function App() {
-  const [destinos, setDestinos] = useState([
-    { nome: 'Paris', descricao: 'A cidade do amor.' },
-    { nome: 'Nova York', descricao: 'A cidade que nunca dorme.' },
-    { nome: 'Tóquio', descricao: 'A capital do Japão.' }
-  ]);
+  const [paginaAtual, setPaginaAtual] = useState('Home');
 
-  const adicionarDestino = (novoDestino) => {
-    setDestinos([...destinos, novoDestino]);
+  const renderPagina = () => {
+    switch (paginaAtual) {
+      case 'Home':
+        return <Home />;
+      case 'Destinos':
+        return <Destinos />;
+      case 'Contato':
+        return <Contato />;
+      default:
+        return <Home />;
+    }
   };
 
   return (
     <div className="App">
       <Header />
-      <FormDestino adicionarDestino={adicionarDestino} />
-      {destinos.map((destino, index) => (
-        <Destino key={index} nome={destino.nome} descricao={destino.descricao} />
-      ))}
+      <nav>
+        <button onClick={() => setPaginaAtual('Home')}>Home</button>
+        <button onClick={() => setPaginaAtual('Destinos')}>Destinos</button>
+        <button onClick={() => setPaginaAtual('Contato')}>Contato</button>
+      </nav>
+      {renderPagina()}
       <Footer />
     </div>
   );
