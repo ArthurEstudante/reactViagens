@@ -26,8 +26,12 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 h1 {
@@ -65,4 +69,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+header{
+  width: 100%;
 }
