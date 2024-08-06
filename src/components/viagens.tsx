@@ -24,7 +24,7 @@ const Viagens = () => {
         <>
             <FormDestino adicionarDestino={adicionarDestino} />
             {destinos.map((destino, index) => (
-                <Destino key={index} nome={destino.nome} descricao={destino.descricao} />
+                <Destino key={index} nome={destino.nome} descricao={destino.descricao} distancia={""} />
             ))}
         </>
     );
